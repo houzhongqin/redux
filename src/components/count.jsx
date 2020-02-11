@@ -6,41 +6,37 @@ export default class Count extends Component {
     // }
     increment = ()=>{
       let {value} = this.refs.count
-    //   let {number} = this.state
-    //   this.setState({number:number+value*1})
-        this.props.store.dispatch(createIncrementAction(value*1))
+        // this.props.store.dispatch(createIncrementAction(value*1))
+        this.props.increment(value*1)
     }
 
     decrement = ()=>{
         let {value} = this.refs.count
-        // let {number} = this.state
-        // this.setState({number:number-value*1})
-        this.props.store.dispatch(createDecrementAction(value*1))
+        this.props.decrement(value*1)
+
+        // this.props.store.dispatch(createDecrementAction(value*1))
     }
 
     incrementOdd = ()=>{
         let {value} = this.refs.count
-        // let {number} = this.state
-        let number = this.props.store.getState()
+        let number = this.props.count
         if(number%2 ===1 ){
-            // this.setState({number:number+value*1})
-            this.props.store.dispatch(createIncrementAction(value*1))
-        }
+            this.props.increment(value*1)
+       }
     }
 
     incrementAsync = ()=>{
         let {value} = this.refs.count
-        // let {number} = this.state
         setTimeout(()=>{
-            // this.setState({number:number-value*1})
-            this.props.store.dispatch(createIncrementAction(value*1))
+            this.props.increment(value*1)
         },1000)
     }
 
     render() {
+        console.log(this.props)
         return (
             <div>
-                <h2>当前得数字是：{this.props.store.getState()}</h2>
+                <h2>当前得数字是：{this.props.count}</h2>
                 <select ref="count">
                     <option value="1">1</option>
                     <option value="2">2</option>

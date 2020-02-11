@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Count from './components/count'
+import Containers from './container/count_container'
 export default class App extends Component {
     render(){
-        return (<Count store={this.props.store}/>)
+        return (<Containers/>)
     }
 }
