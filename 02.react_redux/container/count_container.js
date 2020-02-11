@@ -1,6 +1,6 @@
 import Count from '../components/count'
 import {connect} from 'react-redux'
-import {createIncrementAction,createDecrementAction} from '../redux/count_create_reducers'
+import {createIncrementAction,createDecrementAction,createIncrementAsyncAction} from '../redux/count_create_reducers'
 
 // function mapStateProps(state){
 //     return {count:state}
@@ -15,5 +15,9 @@ import {createIncrementAction,createDecrementAction} from '../redux/count_create
 
 export default connect(
     state=>({count:state}),
-    {increment:createIncrementAction,decrement:createDecrementAction}
+    {
+        increment:createIncrementAction,
+        decrement:createDecrementAction,
+        incrementAsync:createIncrementAsyncAction
+    }
     )(Count)

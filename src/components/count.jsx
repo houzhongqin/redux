@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {createDecrementAction,createIncrementAction} from '../redux/count_create_reducers'
+
 export default class Count extends Component {
     // state = {
     //     number:0
@@ -8,6 +8,7 @@ export default class Count extends Component {
       let {value} = this.refs.count
         // this.props.store.dispatch(createIncrementAction(value*1))
         this.props.increment(value*1)
+        
     }
 
     decrement = ()=>{
@@ -25,11 +26,12 @@ export default class Count extends Component {
        }
     }
 
+
     incrementAsync = ()=>{
         let {value} = this.refs.count
-        setTimeout(()=>{
-            this.props.increment(value*1)
-        },1000)
+        console.log(this.props)
+        this.props.incrementAsync(value*1,1000)
+
     }
 
     render() {
