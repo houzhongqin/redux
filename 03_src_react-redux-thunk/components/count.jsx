@@ -35,6 +35,7 @@ export default class Count extends Component {
     }
 
     render() {
+        console.log(this.props)
         return (
             <div>
                 <h2>当前得数字是：{this.props.count}</h2>
