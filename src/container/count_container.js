@@ -19,7 +19,10 @@ import {
 // }
 
 export default connect(
-    (state)=>({count:state.number}),
+    (state)=>({
+        count:state.number,
+        persons:state.persons
+    }),
     {
         increment: createIncrementAction,
         decrement:createDecrementAction,

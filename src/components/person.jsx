@@ -12,7 +12,7 @@ export default class Person extends Component {
     render() {
         return (
             <div>
-                <h2>当前人数为: {this.props.persons.length}上方组件的数据为 xxx</h2>
+                <h2>当前人数为: {this.props.persons.length}上方组件的数据为 {this.props.number}</h2>
                 <input type="text" placeholder="姓名" ref="username"/>
                 <input type="text" placeholder="年龄" ref="age"/>
                 <button onClick={this.add}>添加</button>

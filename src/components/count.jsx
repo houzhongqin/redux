@@ -37,7 +37,7 @@ export default class Count extends Component {
     render() {
         return (
             <div>
-                <h2>当前得数字是：{this.props.count}</h2>
+                <h2>当前得数字是：{this.props.count},下方的数据为:{this.props.persons.length}</h2>
                 <select ref="count">
                     <option value="1">1</option>
                     <option value="2">2</option>
